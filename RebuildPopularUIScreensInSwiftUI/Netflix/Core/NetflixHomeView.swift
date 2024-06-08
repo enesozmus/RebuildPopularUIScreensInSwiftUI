@@ -228,7 +228,7 @@ extension NetflixHomeView {
     }
     private func onMoviePressed(model: MainModel) {
         router.showScreen(.sheet) { _ in
-            //NetflixMovieDetailsView(product: product)
+            NetflixMovieDetailsView(model: model)
         }
     }
     private func returnRandomBoolean() -> Bool {
