@@ -12,11 +12,16 @@ import SwiftUI
 struct NetflixHomeView: View {
     
     // MARK: Properties
+    @Environment(\.router) var router
+    
     @State private var filters = FilterModel.mockArray
     @State private var selectedFilter: FilterModel? = nil
     @State private var fullHeaderSize: CGSize = .zero
+    @State private var scrollViewOffset: CGFloat = 0
     
     @State private var firstUser: UserModel? = nil
+    @State private var firstMovie: MainModel? = nil
+    
     @State private var mockNetflix: MainModel? = MainModel.mockNetflix
     @State private var movieRows: [MockRow] = []
     
@@ -37,23 +42,66 @@ struct NetflixHomeView: View {
             // ... background
             Color.netflixBlack.ignoresSafeArea()
             
-            ScrollView(.vertical) {
+            // ... content
+            backgroundGradientLayer
+            scrollViewLayer
+            fullHeaderWithFilter
+            
+        }
+        .foregroundStyle(.netflixWhite)
+        .task {
+            await getMockData()
+        }
+        .toolbar(.hidden, for: .navigationBar)
+    }
+    
+}
+
+// MARK: Extension
+extension NetflixHomeView {
+    // ... 🔵
+    private var backgroundGradientLayer: some View {
+        ZStack {
+            LinearGradient(colors: [.netflixDarkGray.opacity(1), .netflixDarkGray.opacity(0)], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+            
+            LinearGradient(colors: [.netflixDarkRed.opacity(0.5), .netflixDarkRed.opacity(0)], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+        }
+        .frame(maxHeight: max(10, (400 + (scrollViewOffset * 0.75))))
+        .opacity(scrollViewOffset < -250 ? 0 : 1)
+        .animation(.easeInOut, value: scrollViewOffset)
+    }
+    // ... 🔵
+    private var scrollViewLayer: some View {
+        ScrollViewWithOnScrollChanged(
+            .vertical,
+            showsIndicators: false,
+            content: {
                 VStack(spacing: 8) {
                     Rectangle()
                         .opacity(0)
                         .frame(height: fullHeaderSize.height)
-                    if let mockNetflix {
-                        heroCell(model: mockNetflix)
+                    
+                    if let firstMovie {
+                        heroCell(model: firstMovie)
                     }
+                    
                     categoryRows
                 }
+            },
+            onScrollChanged: { offset in
+                scrollViewOffset = min(0, offset.y)
             }
-            .scrollIndicators(.hidden)
+        )
+    }
+    // ... 🔵
+    private var fullHeaderWithFilter: some View {
+        VStack(spacing: 0) {
+            header
+                .padding(.horizontal, 16)
             
-            // ... content
-            VStack(spacing: 0) {
-                header
-                    .padding(.horizontal, 16)
+            if scrollViewOffset > -20 {
                 NetflixFilterBarView(
                     filters: filters,
                     selectedFilter: selectedFilter,
@@ -65,25 +113,28 @@ struct NetflixHomeView: View {
                     }
                 )
                 .padding(.top, 16)
+                .transition(.move(edge: .top).combined(with: .opacity))
             }
-            .background(.blue)
-            .readingFrame { frame in
-                if fullHeaderSize == .zero {
-                    fullHeaderSize = frame.size
+        }
+        .padding(.bottom, 8)
+        .background(
+            ZStack {
+                if scrollViewOffset < -70 {
+                    Rectangle()
+                        .fill(Color.clear)
+                        .background(.ultraThinMaterial)
+                        .brightness(-0.2)
+                        .ignoresSafeArea()
                 }
             }
-            
+        )
+        .animation(.smooth, value: scrollViewOffset)
+        .readingFrame { frame in
+            if fullHeaderSize == .zero {
+                fullHeaderSize = frame.size
+            }
         }
-        .foregroundStyle(.netflixWhite)
-        .task {
-            await getMockData()
-        }
-        .toolbar(.hidden, for: .navigationBar)
     }
-}
-
-// MARK: Extension
-extension NetflixHomeView {
     // ... 🔵
     private var header: some View {
         HStack(spacing: 8) {
@@ -91,6 +142,7 @@ extension NetflixHomeView {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.title)
                 .onTapGesture {
+                    router.dismissScreen()
                 }
             
             HStack(spacing: 16) {
@@ -108,13 +160,14 @@ extension NetflixHomeView {
     private func heroCell(model: MainModel) -> some View {
         NetflixHeroCell(
             isNetflixFilm: true,
-            title: model.title,
+            //title: model.title,
+            title: "Top Gun: Maverick",
             categories: ["Action/Adventure"],
             onBackgroundPressed: {
-                //onProductPressed(product: product)
+                onMoviePressed(model: model)
             },
             onPlayPressed: {
-                //onProductPressed(product: product)
+                onMoviePressed(model: model)
             },
             onMyListPressed: {
             }
@@ -141,7 +194,7 @@ extension NetflixHomeView {
                                     topTenRanking: rowIndex + 1
                                 )
                                 .onTapGesture {
-                                    //onProductPressed(product: product)
+                                    onMoviePressed(model: row.products[rowIndex])
                                 }
                             }
                         }
@@ -161,7 +214,7 @@ extension NetflixHomeView {
             firstUser = try await DatabaseHelper().getUsers().first
             // ... mock-movies
             let movies = try await DatabaseHelper().getProducts()
-            // mockNetflix = movies.first
+            firstMovie = movies.first
             
             // ... row
             var rows: [MockRow] = []
@@ -171,6 +224,11 @@ extension NetflixHomeView {
             movieRows = rows
         } catch let error {
             print("getMockData() -> \(error.localizedDescription)")
+        }
+    }
+    private func onMoviePressed(model: MainModel) {
+        router.showScreen(.sheet) { _ in
+            //NetflixMovieDetailsView(product: product)
         }
     }
     private func returnRandomBoolean() -> Bool {
