@@ -16,10 +16,20 @@ struct NetflixHomeView: View {
     @State private var selectedFilter: FilterModel? = nil
     @State private var fullHeaderSize: CGSize = .zero
     
-    @State private var mockNetflix: MainModel? = MainModel.mockNetflix
-    
     @State private var firstUser: UserModel? = nil
+    @State private var mockNetflix: MainModel? = MainModel.mockNetflix
     @State private var movieRows: [MockRow] = []
+    
+    @State private var numImages: Double = 9
+    var imageNames: [String] {
+        Array(1...Int(numImages)).map {"netflix\($0)"}
+    }
+    var movieNames: [String] {
+        ["Top Gun: Maverick", "Avengers: Endgame", "Under Paris", "Mad Max: Fury Road", "365 Days", "No Hard Feelings", "D-Day: 80th Anniversary", "Exhuma", "Godzilla Vs. Kong"]
+    }
+    var movieGenres: [String] {
+        ["Action", "Adventure", "Animation", "Biography", "Comedy", "Crime" , "Documentary", "Drama", "Family", "Fantasy", "Film-Noir", "History", "Horror", "Music", "Musical", "Mystery", "Romance", "Sci-Fi", "Short", "Sport", "Thriller", "War", "Western"]
+    }
     
     // MARK: BODY
     var body: some View {
@@ -35,10 +45,7 @@ struct NetflixHomeView: View {
                     if let mockNetflix {
                         heroCell(model: mockNetflix)
                     }
-                    ForEach(0..<18) { _ in
-                        Rectangle()
-                            .fill(.pink)
-                    }
+                    categoryRows
                 }
             }
             .scrollIndicators(.hidden)
@@ -83,6 +90,9 @@ extension NetflixHomeView {
             Text("For You")
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.title)
+                .onTapGesture {
+                }
+            
             HStack(spacing: 16) {
                 Image(systemName: "tv.badge.wifi")
                     .onTapGesture {
@@ -111,6 +121,37 @@ extension NetflixHomeView {
         )
         .padding(24)
     }
+    // ... 🔵
+    private var categoryRows: some View {
+        LazyVStack(spacing: 16) {
+            ForEach(Array(movieRows.enumerated()), id: \.offset) { (rowIndex, row) in
+                VStack(alignment: .leading, spacing: 6) {
+                    //Text(row.products[rowIndex].title)
+                    Text(returnRandomMovieTitles(rowIndex))
+                        .font(.headline)
+                        .padding(.horizontal, 16)
+                    
+                    ScrollView(.horizontal) {
+                        LazyHStack {
+                            ForEach(Array(movieRows.enumerated()), id: \.offset) { (rowIndex, row) in
+                                NetflixMovieCell(
+                                    imageName: row.images.first ?? Constants.randomImage,
+                                    title: row.title,
+                                    isRecentlyAdded: returnRandomBoolean(),
+                                    topTenRanking: rowIndex + 1
+                                )
+                                .onTapGesture {
+                                    //onProductPressed(product: product)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 16)
+                    }
+                    .scrollIndicators(.hidden)
+                }
+            }
+        }
+    }
     
     // MARK: Functions
     private func getMockData() async {
@@ -118,21 +159,33 @@ extension NetflixHomeView {
         do {
             // ... user
             firstUser = try await DatabaseHelper().getUsers().first
-            // ... products
+            // ... mock-movies
             let movies = try await DatabaseHelper().getProducts()
             // mockNetflix = movies.first
             
             // ... row
             var rows: [MockRow] = []
-            let allBrands = Set(movies.map({$0.brand}))
-            for brand in allBrands {
-                rows.append(MockRow(title: brand?.capitalized ?? "error", products: movies, images: [""]))
+            for (image, name) in zip(imageNames, movieNames) {
+                rows.append(MockRow(title: name, products: movies, images: [image]))
             }
             movieRows = rows
         } catch let error {
             print("getMockData() -> \(error.localizedDescription)")
         }
     }
+    private func returnRandomBoolean() -> Bool {
+        return Int.random(in: 1...4) == 1
+    }
+    private func returnRandomNumbers() -> Int {
+        return Int.random(in: 1...10)
+    }
+    private func returnRandomMovieTitles(_ randomIndex: Int) -> String {
+        if let randomGenre = movieGenres.randomElement() {
+            return randomGenre
+        }
+        return "error"
+    }
+    
 }
 
 // MARK: Preview
