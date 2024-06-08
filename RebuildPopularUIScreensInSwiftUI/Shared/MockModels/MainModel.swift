@@ -16,7 +16,7 @@ struct ProductArray: Codable {
 ///
 ///
 ///
-// MARK: - MainModel ()
+// MARK: - MainModel
 struct MainModel: Codable, Identifiable {
     let id: Int
     let title, description: String
@@ -36,6 +36,52 @@ struct MainModel: Codable, Identifiable {
     let meta: Meta
     let images: [String]
     let thumbnail: String
+    
+    // mock-seed-data
+    var firstImage: String {
+        images.first ?? Constants.randomImage
+    }
+    static var mockNetflix: MainModel {
+        MainModel(
+            id: 002,
+            title: "Top Gun: Maverick",
+            description: "This is some mock product description that goes here.",
+            category: Category.beauty,
+            price: 999,
+            discountPercentage: 15,
+            rating: 4.5,
+            stock: 50,
+            tags: ["", ""],
+            brand: "Apple",
+            sku: "",
+            weight: 0,
+            dimensions: Dimensions(
+                width: 0,
+                height: 0,
+                depth: 0
+            ),
+            warrantyInformation: "",
+            shippingInformation: "",
+            availabilityStatus: AvailabilityStatus.inStock,
+            reviews: [Review(
+                rating: 0,
+                comment: "",
+                date: CreatedAt.the20240523T085621618Z,
+                reviewerName: "",
+                reviewerEmail: ""
+            ) ],
+            returnPolicy: ReturnPolicy.noReturnPolicy,
+            minimumOrderQuantity: 0,
+            meta: Meta(
+                createdAt: CreatedAt.the20240523T085621618Z,
+                updatedAt: CreatedAt.the20240523T085621618Z,
+                barcode: "",
+                qrCode: ""
+            ),
+            images: [Constants.randomImage, Constants.randomImage, Constants.randomImage],
+            thumbnail: Constants.randomImage
+        )
+    }
 }
 
 enum AvailabilityStatus: String, Codable {
