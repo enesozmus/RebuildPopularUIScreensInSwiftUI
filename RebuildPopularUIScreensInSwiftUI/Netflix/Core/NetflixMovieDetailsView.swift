@@ -28,10 +28,15 @@ struct NetflixMovieDetailsView: View {
             VStack(spacing: 0) {
                 NetflixDetailsHeaderView(
                     imageName: model.firstImage,
-                    progress: progress) {
-                    } onXMarkPressed: {
+                    progress: progress,
+                    onAirplayPressed: {
+                        
+                    },
+                    onXMarkPressed: {
                         router.dismissScreen()
                     }
+                )
+                
                 ScrollView(.vertical) {
                     VStack(alignment: .leading, spacing: 16) {
                         detailsBodySection
@@ -41,6 +46,7 @@ struct NetflixMovieDetailsView: View {
                     .padding(8)
                 }
                 .scrollIndicators(.hidden)
+                
             }
         }
         .task {
@@ -71,11 +77,45 @@ extension NetflixMovieDetailsView {
     }
     // ... 🔵
     private var buttonsSection: some View {
-        Text("")
+        HStack(spacing: 32) {
+            MyListButton(isMyList: isMyList) {
+                isMyList.toggle()
+            }
+            
+            RateButton { selection in
+                // do something with selection
+            }
+            
+            ShareButton()
+        }
+        .padding(.leading, 32)
     }
+    
     // ... 🔵
     private var productsGridSection: some View {
-        Text("")
+        VStack(alignment: .leading) {
+            Text("More Like This")
+                .font(.headline)
+            
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3),
+                      alignment: .center,
+                      spacing: 8,
+                      pinnedViews: [],
+                      content: {
+                ForEach(products) { product in
+                    NetflixMovieCell2(
+                        imageName: product.firstImage,
+                        title: product.title,
+                        isRecentlyAdded: product.recentlyAdded,
+                        topTenRanking: nil
+                    )
+                    .onTapGesture {
+                        onMoviePressed(model: product)
+                    }
+                }
+            })
+        }
+        .foregroundStyle(.netflixWhite)
     }
     
     // MARK: Functions
@@ -86,6 +126,11 @@ extension NetflixMovieDetailsView {
             products = try await DatabaseHelper().getProducts()
         } catch {
             
+        }
+    }
+    private func onMoviePressed(model: MainModel) {
+        router.showScreen(.sheet) { _ in
+            NetflixMovieDetailsView(model: model)
         }
     }
 }

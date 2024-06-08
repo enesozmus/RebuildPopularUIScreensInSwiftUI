@@ -41,6 +41,10 @@ struct MainModel: Codable, Identifiable {
     var firstImage: String {
         images.first ?? Constants.randomImage
     }
+    // ⚠️ ignore it
+    let recentlyAdded: Bool = {
+        return Int.random(in: 1...4) == 1
+    }()
     static var mockNetflix: MainModel {
         MainModel(
             id: 002,

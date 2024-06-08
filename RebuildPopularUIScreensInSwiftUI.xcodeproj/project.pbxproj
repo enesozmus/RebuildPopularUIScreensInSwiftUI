@@ -10,6 +10,10 @@
 		DF0887552C14BE24006B0732 /* NetflixDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0887542C14BE24006B0732 /* NetflixDetailsHeaderView.swift */; };
 		DF0887572C14BE44006B0732 /* NetflixDetailsBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0887562C14BE44006B0732 /* NetflixDetailsBodyView.swift */; };
 		DF0887592C14BEA3006B0732 /* NetflixMovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0887582C14BEA3006B0732 /* NetflixMovieDetailsView.swift */; };
+		DF4E29482C14D06A00D07E95 /* MyListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E29472C14D06A00D07E95 /* MyListButton.swift */; };
+		DF4E294A2C14D13C00D07E95 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E29492C14D13C00D07E95 /* ShareButton.swift */; };
+		DF4E294C2C14D1AF00D07E95 /* RateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E294B2C14D1AF00D07E95 /* RateButton.swift */; };
+		DF4E29502C14D6A700D07E95 /* NetflixMovieCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E294F2C14D6A700D07E95 /* NetflixMovieCell2.swift */; };
 		DFBD2BC12C14A76400531167 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD2BC02C14A76400531167 /* ContentView.swift */; };
 		DFBD2BC32C14A76500531167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBD2BC22C14A76500531167 /* Assets.xcassets */; };
 		DFBD2BC62C14A76500531167 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBD2BC52C14A76500531167 /* Preview Assets.xcassets */; };
@@ -34,6 +38,10 @@
 		DF0887542C14BE24006B0732 /* NetflixDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixDetailsHeaderView.swift; sourceTree = "<group>"; };
 		DF0887562C14BE44006B0732 /* NetflixDetailsBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixDetailsBodyView.swift; sourceTree = "<group>"; };
 		DF0887582C14BEA3006B0732 /* NetflixMovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixMovieDetailsView.swift; sourceTree = "<group>"; };
+		DF4E29472C14D06A00D07E95 /* MyListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListButton.swift; sourceTree = "<group>"; };
+		DF4E29492C14D13C00D07E95 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
+		DF4E294B2C14D1AF00D07E95 /* RateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateButton.swift; sourceTree = "<group>"; };
+		DF4E294F2C14D6A700D07E95 /* NetflixMovieCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixMovieCell2.swift; sourceTree = "<group>"; };
 		DFBD2BBB2C14A76400531167 /* RebuildPopularUIScreensInSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RebuildPopularUIScreensInSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBD2BC02C14A76400531167 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DFBD2BC22C14A76500531167 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +74,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF4E294D2C14D21D00D07E95 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				DF4E29472C14D06A00D07E95 /* MyListButton.swift */,
+				DF4E294B2C14D1AF00D07E95 /* RateButton.swift */,
+				DF4E29492C14D13C00D07E95 /* ShareButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		DFBD2BB22C14A76400531167 = {
 			isa = PBXGroup;
 			children = (
@@ -160,12 +178,14 @@
 		DFBD2BF22C14AD4600531167 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DF4E294D2C14D21D00D07E95 /* Buttons */,
 				DF0887562C14BE44006B0732 /* NetflixDetailsBodyView.swift */,
 				DF0887542C14BE24006B0732 /* NetflixDetailsHeaderView.swift */,
 				DFBD2BF02C14AD4600531167 /* NetflixFilterBarView.swift */,
 				DFBD2BF12C14AD4600531167 /* NetflixFilterCell.swift */,
 				DFBD2BFA2C14B12700531167 /* NetflixHeroCell.swift */,
 				DFBD2BFC2C14B44700531167 /* NetflixMovieCell.swift */,
+				DF4E294F2C14D6A700D07E95 /* NetflixMovieCell2.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -265,12 +285,16 @@
 				DFBD2BEE2C14AA6600531167 /* UserModel.swift in Sources */,
 				DFBD2BC12C14A76400531167 /* ContentView.swift in Sources */,
 				DFBD2BFB2C14B12700531167 /* NetflixHeroCell.swift in Sources */,
+				DF4E294C2C14D1AF00D07E95 /* RateButton.swift in Sources */,
 				DFBD2BED2C14AA6600531167 /* MainModel.swift in Sources */,
+				DF4E29502C14D6A700D07E95 /* NetflixMovieCell2.swift in Sources */,
 				DFBD2BE02C14AA0300531167 /* RebuildPopularUIScreensInSwiftUIApp.swift in Sources */,
 				DFBD2BF52C14AD4600531167 /* NetflixFilterBarView.swift in Sources */,
 				DFBD2BFD2C14B44700531167 /* NetflixMovieCell.swift in Sources */,
 				DFBD2BF72C14AD4600531167 /* NetflixHomeView.swift in Sources */,
 				DFBD2BEC2C14AA6600531167 /* ImageLoaderView.swift in Sources */,
+				DF4E294A2C14D13C00D07E95 /* ShareButton.swift in Sources */,
+				DF4E29482C14D06A00D07E95 /* MyListButton.swift in Sources */,
 				DF0887592C14BEA3006B0732 /* NetflixMovieDetailsView.swift in Sources */,
 				DFBD2BEA2C14AA6600531167 /* Constants.swift in Sources */,
 				DFBD2BF62C14AD4600531167 /* NetflixFilterCell.swift in Sources */,

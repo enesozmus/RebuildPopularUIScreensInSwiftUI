@@ -190,7 +190,7 @@ extension NetflixHomeView {
                                 NetflixMovieCell(
                                     imageName: row.images.first ?? Constants.randomImage,
                                     title: row.title,
-                                    isRecentlyAdded: returnRandomBoolean(),
+                                    isRecentlyAdded: row.products[rowIndex].recentlyAdded,
                                     topTenRanking: rowIndex + 1
                                 )
                                 .onTapGesture {
@@ -231,9 +231,9 @@ extension NetflixHomeView {
             NetflixMovieDetailsView(model: model)
         }
     }
-    private func returnRandomBoolean() -> Bool {
-        return Int.random(in: 1...4) == 1
-    }
+    //    private func returnRandomBoolean() -> Bool {
+    //        return Int.random(in: 1...4) == 1
+    //    }
     private func returnRandomNumbers() -> Int {
         return Int.random(in: 1...10)
     }
