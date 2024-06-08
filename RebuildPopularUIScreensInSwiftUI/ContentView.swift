@@ -5,45 +5,33 @@
 //  Created by enesozmus on 8.06.2024.
 //
 
+import SwiftfulRouting
+import SwiftfulUI
 import SwiftUI
 
 struct ContentView: View {
     
     // MARK: Properties
-    @State private var users: [UserModel] = []
-    @State private var products: [MainModel] = []
+    @Environment(\.router) var router
     
     // MARK: BODY
     var body: some View {
-        ScrollView {
-            VStack {
-                ImageLoaderView(urlString: Constants.randomImage)
-                    .frame(width: 100, height: 100)
-                
-                ForEach(users) { product in
-                    Text(product.email)
+        List {
+            Button {
+                router.showScreen(.fullScreenCover) { _ in
+                    NetflixHomeView()
                 }
+            } label: {
+                Text("Open Netflix")
             }
-            .padding()
-            .task {
-                print("task -> 1")
-                await getData()
-            }
-        }
-    }
-    
-    // MARK: Functions
-    private func getData() async {
-        do {
-            users = try await DatabaseHelper().getUsers()
-            products = try await DatabaseHelper().getProducts()
-        } catch let error {
-            print("Error -> \(error.localizedDescription)")
+            
         }
     }
 }
 
 // MARK: Preview
 #Preview {
-    ContentView()
+    RouterView { _ in
+        ContentView()
+    }
 }

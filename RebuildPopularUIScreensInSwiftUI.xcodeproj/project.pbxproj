@@ -19,6 +19,10 @@
 		DFBD2BEC2C14AA6600531167 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD2BE52C14AA6600531167 /* ImageLoaderView.swift */; };
 		DFBD2BED2C14AA6600531167 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD2BE72C14AA6600531167 /* MainModel.swift */; };
 		DFBD2BEE2C14AA6600531167 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD2BE82C14AA6600531167 /* UserModel.swift */; };
+		DFBD2BF52C14AD4600531167 /* NetflixFilterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD2BF02C14AD4600531167 /* NetflixFilterBarView.swift */; };
+		DFBD2BF62C14AD4600531167 /* NetflixFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD2BF12C14AD4600531167 /* NetflixFilterCell.swift */; };
+		DFBD2BF72C14AD4600531167 /* NetflixHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD2BF32C14AD4600531167 /* NetflixHomeView.swift */; };
+		DFBD2BF92C14ADD800531167 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DFBD2BF82C14ADD800531167 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		DFBD2BE52C14AA6600531167 /* ImageLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
 		DFBD2BE72C14AA6600531167 /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		DFBD2BE82C14AA6600531167 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DFBD2BF02C14AD4600531167 /* NetflixFilterBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetflixFilterBarView.swift; sourceTree = "<group>"; };
+		DFBD2BF12C14AD4600531167 /* NetflixFilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetflixFilterCell.swift; sourceTree = "<group>"; };
+		DFBD2BF32C14AD4600531167 /* NetflixHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetflixHomeView.swift; sourceTree = "<group>"; };
+		DFBD2BF82C14ADD800531167 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,7 @@
 		DFBD2BB22C14A76400531167 = {
 			isa = PBXGroup;
 			children = (
+				DFBD2BF82C14ADD800531167 /* README.md */,
 				DFBD2BBD2C14A76400531167 /* RebuildPopularUIScreensInSwiftUI */,
 				DFBD2BBC2C14A76400531167 /* Products */,
 			);
@@ -69,6 +78,7 @@
 			children = (
 				DFBD2BC22C14A76500531167 /* Assets.xcassets */,
 				DFBD2BC02C14A76400531167 /* ContentView.swift */,
+				DFBD2BEF2C14AD3400531167 /* Netflix */,
 				DFBD2BC42C14A76500531167 /* Preview Content */,
 				DFBD2BDE2C14A9F000531167 /* Root */,
 				DFBD2BE12C14AA5300531167 /* Shared */,
@@ -126,6 +136,32 @@
 				DFBD2BE82C14AA6600531167 /* UserModel.swift */,
 			);
 			path = MockModels;
+			sourceTree = "<group>";
+		};
+		DFBD2BEF2C14AD3400531167 /* Netflix */ = {
+			isa = PBXGroup;
+			children = (
+				DFBD2BF22C14AD4600531167 /* Components */,
+				DFBD2BF42C14AD4600531167 /* Core */,
+			);
+			path = Netflix;
+			sourceTree = "<group>";
+		};
+		DFBD2BF22C14AD4600531167 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DFBD2BF02C14AD4600531167 /* NetflixFilterBarView.swift */,
+				DFBD2BF12C14AD4600531167 /* NetflixFilterCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DFBD2BF42C14AD4600531167 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DFBD2BF32C14AD4600531167 /* NetflixHomeView.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFBD2BF92C14ADD800531167 /* README.md in Resources */,
 				DFBD2BC62C14A76500531167 /* Preview Assets.xcassets in Resources */,
 				DFBD2BC32C14A76500531167 /* Assets.xcassets in Resources */,
 			);
@@ -213,8 +250,11 @@
 				DFBD2BC12C14A76400531167 /* ContentView.swift in Sources */,
 				DFBD2BED2C14AA6600531167 /* MainModel.swift in Sources */,
 				DFBD2BE02C14AA0300531167 /* RebuildPopularUIScreensInSwiftUIApp.swift in Sources */,
+				DFBD2BF52C14AD4600531167 /* NetflixFilterBarView.swift in Sources */,
+				DFBD2BF72C14AD4600531167 /* NetflixHomeView.swift in Sources */,
 				DFBD2BEC2C14AA6600531167 /* ImageLoaderView.swift in Sources */,
 				DFBD2BEA2C14AA6600531167 /* Constants.swift in Sources */,
+				DFBD2BF62C14AD4600531167 /* NetflixFilterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
