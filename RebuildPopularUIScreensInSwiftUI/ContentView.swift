@@ -24,6 +24,13 @@ struct ContentView: View {
             } label: {
                 Text("Open Netflix")
             }
+            Button {
+                router.showScreen(.fullScreenCover) { _ in
+                    BumbleHomeView()
+                }
+            } label: {
+                Text("Open Bumble")
+            }
             
         }
     }
