@@ -38,6 +38,8 @@
 		DFBD2BF92C14ADD800531167 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DFBD2BF82C14ADD800531167 /* README.md */; };
 		DFBD2BFB2C14B12700531167 /* NetflixHeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD2BFA2C14B12700531167 /* NetflixHeroCell.swift */; };
 		DFBD2BFD2C14B44700531167 /* NetflixMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD2BFC2C14B44700531167 /* NetflixMovieCell.swift */; };
+		DFBD79342C18456D00005027 /* BumbleProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD79332C18456D00005027 /* BumbleProfileImageCell.swift */; };
+		DFBD79362C184C8800005027 /* BumbleChatPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD79352C184C8800005027 /* BumbleChatPreviewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		DFBD2BF82C14ADD800531167 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DFBD2BFA2C14B12700531167 /* NetflixHeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixHeroCell.swift; sourceTree = "<group>"; };
 		DFBD2BFC2C14B44700531167 /* NetflixMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixMovieCell.swift; sourceTree = "<group>"; };
+		DFBD79332C18456D00005027 /* BumbleProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleProfileImageCell.swift; sourceTree = "<group>"; };
+		DFBD79352C184C8800005027 /* BumbleChatPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleChatPreviewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				DF0A1E892C15C2D900292E55 /* BumbleHeartView.swift */,
 				DF6CEA582C15EE3600EAA77B /* InterestPillView.swift */,
 				DF6CEA5A2C15EF7A00EAA77B /* InterestPillGridView.swift */,
+				DFBD79332C18456D00005027 /* BumbleProfileImageCell.swift */,
+				DFBD79352C184C8800005027 /* BumbleChatPreviewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -323,11 +329,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0887572C14BE44006B0732 /* NetflixDetailsBodyView.swift in Sources */,
+				DFBD79362C184C8800005027 /* BumbleChatPreviewCell.swift in Sources */,
 				DFBD2BEB2C14AA6600531167 /* DatabaseHelper.swift in Sources */,
 				DFA293152C15B2D90093FF5F /* BumbleHomeView.swift in Sources */,
 				DF6CEA592C15EE3600EAA77B /* InterestPillView.swift in Sources */,
 				DFBD2BEE2C14AA6600531167 /* UserModel.swift in Sources */,
 				DFBD2BC12C14A76400531167 /* ContentView.swift in Sources */,
+				DFBD79342C18456D00005027 /* BumbleProfileImageCell.swift in Sources */,
 				DFBD2BFB2C14B12700531167 /* NetflixHeroCell.swift in Sources */,
 				DF4E294C2C14D1AF00D07E95 /* RateButton.swift in Sources */,
 				DF0A1E882C15BEBC00292E55 /* BumbleCardView.swift in Sources */,
