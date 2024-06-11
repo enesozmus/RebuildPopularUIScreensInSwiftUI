@@ -14,7 +14,7 @@
 
 | | | | | | |
 | :-: | :-: | :-: | :- | :- | :- |
-<video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/8b805b2d-b444-4b8b-adff-9229b7f399e8' width=180/> | <video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/660346ef-273b-45e5-910e-647c453f6df0' width=180/> | <video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/916101fe-aedf-498f-a069-0502ddfa258f' width=180/> | <video src='' width=180/> | <video src='' width=180/> | <video src='' width=180/>
+<video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/8b805b2d-b444-4b8b-adff-9229b7f399e8' width=180/> | <video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/660346ef-273b-45e5-910e-647c453f6df0' width=180/> | <video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/916101fe-aedf-498f-a069-0502ddfa258f' width=180/> | <video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/0e9926aa-e890-4d41-b193-08de501f65e4' width=180/> | <video src='' width=180/> | <video src='' width=180/>
 
 *Stuttering is due to simulator lag and shouldn't happen on real device.*
 <br> <br>
