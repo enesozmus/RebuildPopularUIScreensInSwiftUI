@@ -99,7 +99,7 @@ extension BumbleHomeView {
                 .background(.black.opacity(0.001))
                 .onTapGesture {
                     router.showScreen(.push) { _ in
-                        //...
+                        BumbleChatsView()
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)

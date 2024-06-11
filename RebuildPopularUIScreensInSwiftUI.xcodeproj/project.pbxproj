@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF06221B2C18746900011762 /* BumbleChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06221A2C18746900011762 /* BumbleChatsView.swift */; };
 		DF0887552C14BE24006B0732 /* NetflixDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0887542C14BE24006B0732 /* NetflixDetailsHeaderView.swift */; };
 		DF0887572C14BE44006B0732 /* NetflixDetailsBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0887562C14BE44006B0732 /* NetflixDetailsBodyView.swift */; };
 		DF0887592C14BEA3006B0732 /* NetflixMovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0887582C14BEA3006B0732 /* NetflixMovieDetailsView.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF06221A2C18746900011762 /* BumbleChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleChatsView.swift; sourceTree = "<group>"; };
 		DF0887542C14BE24006B0732 /* NetflixDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixDetailsHeaderView.swift; sourceTree = "<group>"; };
 		DF0887562C14BE44006B0732 /* NetflixDetailsBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixDetailsBodyView.swift; sourceTree = "<group>"; };
 		DF0887582C14BEA3006B0732 /* NetflixMovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixMovieDetailsView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				DFA293142C15B2D90093FF5F /* BumbleHomeView.swift */,
+				DF06221A2C18746900011762 /* BumbleChatsView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				DFBD2BC12C14A76400531167 /* ContentView.swift in Sources */,
 				DFBD79342C18456D00005027 /* BumbleProfileImageCell.swift in Sources */,
 				DFBD2BFB2C14B12700531167 /* NetflixHeroCell.swift in Sources */,
+				DF06221B2C18746900011762 /* BumbleChatsView.swift in Sources */,
 				DF4E294C2C14D1AF00D07E95 /* RateButton.swift in Sources */,
 				DF0A1E882C15BEBC00292E55 /* BumbleCardView.swift in Sources */,
 				DFBD2BED2C14AA6600531167 /* MainModel.swift in Sources */,
