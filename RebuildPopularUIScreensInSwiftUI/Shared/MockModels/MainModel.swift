@@ -141,3 +141,11 @@ struct MockRow: Identifiable {
     let products: [MainModel]
     let images: [String]
 }
+
+struct MockSongRow: Identifiable {
+    let id: String = UUID().uuidString
+    let songName: String
+    let singerName: String
+    let products: [MainModel]
+    let coverImage: String
+}
