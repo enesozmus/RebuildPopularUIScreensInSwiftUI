@@ -7,6 +7,9 @@
 ## 🍷 Bumble
 > * Bumble is an online dating application developed for iOS and Android platforms.
 
+## 🎵 Spotify
+> * Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world.
+
 ## 📹 Screen Recordings
 | | | | | | |
 | :-: | :-: | :-: | :- | :- | :- |
@@ -15,6 +18,11 @@
 | | | | | | |
 | :-: | :-: | :-: | :- | :- | :- |
 <video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/8b805b2d-b444-4b8b-adff-9229b7f399e8' width=180/> | <video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/660346ef-273b-45e5-910e-647c453f6df0' width=180/> | <video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/916101fe-aedf-498f-a069-0502ddfa258f' width=180/> | <video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/0e9926aa-e890-4d41-b193-08de501f65e4' width=180/> | <video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/7bbdd5bf-f452-4da1-aada-09b52a922784' width=180/> | <video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/d5b2be22-855c-46d9-b8d8-4b32141d22a9' width=180/>
+
+| | | | | | |
+| :-: | :-: | :-: | :- | :- | :- |
+<video src='https://github.com/enesozmus/RebuildPopularUI/assets/94680591/9f191a35-2554-490c-9059-5d6112cff2ff' width=180/> | <video src='' width=180/> | <video src='' width=180/> | <video src='' width=180/> | <video src='' width=180/> | <video src='' width=180/>
+
 
 *Stuttering is due to simulator lag and shouldn't happen on real device.*
 <br> <br>

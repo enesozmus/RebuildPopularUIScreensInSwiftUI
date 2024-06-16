@@ -17,21 +17,21 @@ struct ContentView: View {
     // MARK: BODY
     var body: some View {
         List {
-            Button {
+            Button("Open Netflix") {
                 router.showScreen(.fullScreenCover) { _ in
                     NetflixHomeView()
                 }
-            } label: {
-                Text("Open Netflix")
             }
-            Button {
+            Button("Open Bumble") {
                 router.showScreen(.fullScreenCover) { _ in
                     BumbleHomeView()
                 }
-            } label: {
-                Text("Open Bumble")
             }
-            
+            Button("Open Spotify") {
+                router.showScreen(.fullScreenCover) { _ in
+                    SpotifyHomeView()
+                }
+            }
         }
     }
 }
