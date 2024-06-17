@@ -26,7 +26,7 @@ struct SpotifyHomeView: View {
         Array(1...Int(numImages)).map {"spotify\($0)"}
     }
     var songNames: [String] {
-        ["Astronaut in the Ocean Masked Wolf", "Faded Alan Walker", "Let Me Go No Method", "Lost on You LP", "Diamonds Rihanna", "Believer Imagine Dragons", "Djadja", "One Dance"]
+        ["Astronaut in the Ocean", "Faded", "Let Me Go", "Lost on You", "Diamonds", "Believer", "Djadja", "One Dance"]
     }
     var singerNames: [String] {
         ["Masked Wolf", "Alan Walker", "No Method", "LP", "Rihanna", "Imagine Dragons", "Aya Nakamura", "Drake"]
@@ -52,6 +52,7 @@ struct SpotifyHomeView: View {
                                     newReleaseSection(mainModel: song)
                                         .padding(.horizontal, 16)
                                 }
+                                listRows
                             }
                         } header: {
                             header
@@ -190,7 +191,43 @@ extension SpotifyHomeView {
         }
     }
     // ... 🔵
-    
+    private var listRows: some View {
+        ForEach(songRows) { row in
+            VStack(spacing: 8) {
+                Text(row.songName)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.spotifyWhite)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+                ScrollView(.horizontal) {
+                    HStack(alignment: .top, spacing: 16) {
+                        /*
+                         ForEach(row.products) { product in
+                            ImageTitleRowCell(
+                                imageSize: 120,
+                                imageName: product.firstImage,
+                                title: product.title
+                         )
+                         */
+                        ForEach(songRows) { song in
+                            ImageTitleRowCell(
+                                imageSize: 120,
+                                imageName: song.coverImage,
+                                title: song.songName
+                            )
+                            .asButton(.press) {
+                                //goToPlaylistView(product: product)
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                }
+                .scrollIndicators(.hidden)
+            }
+        }
+    }
+    // ... 🔵
     
     // MARK: Functions
     private func getMockData() async {
