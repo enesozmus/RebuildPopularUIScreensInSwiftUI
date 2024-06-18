@@ -86,6 +86,47 @@ struct MainModel: Codable, Identifiable {
             thumbnail: Constants.randomImage
         )
     }
+    static var mockSpotify: MainModel {
+        MainModel(
+            id: 003,
+            title: "Astronaut in the Ocean",
+            description: "Masked Wolf",
+            category: Category.beauty,
+            price: 999,
+            discountPercentage: 15,
+            rating: 4.5,
+            stock: 50,
+            tags: ["", ""],
+            brand: "Pop Rising",
+            sku: "",
+            weight: 0,
+            dimensions: Dimensions(
+                width: 0,
+                height: 0,
+                depth: 0
+            ),
+            warrantyInformation: "",
+            shippingInformation: "",
+            availabilityStatus: AvailabilityStatus.inStock,
+            reviews: [Review(
+                rating: 0,
+                comment: "",
+                date: CreatedAt.the20240523T085621618Z,
+                reviewerName: "",
+                reviewerEmail: ""
+            ) ],
+            returnPolicy: ReturnPolicy.noReturnPolicy,
+            minimumOrderQuantity: 0,
+            meta: Meta(
+                createdAt: CreatedAt.the20240523T085621618Z,
+                updatedAt: CreatedAt.the20240523T085621618Z,
+                barcode: "",
+                qrCode: ""
+            ),
+            images: ["spotify1", "spotify2", "spotify3"],
+            thumbnail: Constants.randomImage
+        )
+    }
 }
 
 enum AvailabilityStatus: String, Codable {

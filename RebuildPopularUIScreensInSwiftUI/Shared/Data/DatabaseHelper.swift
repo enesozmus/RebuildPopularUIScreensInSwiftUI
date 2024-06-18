@@ -10,7 +10,7 @@ import Foundation
 struct DatabaseHelper {
     
     func getProducts() async throws -> [MainModel] {
-        print("DatabaseHelper -> getProducts")
+        //print("DatabaseHelper -> getProducts")
         guard let url = URL(string: "https://dummyjson.com/products") else {
             throw URLError(.badURL)
         }
@@ -21,7 +21,7 @@ struct DatabaseHelper {
     }
     
     func getUsers() async throws -> [UserModel] {
-        print("DatabaseHelper -> getUsers")
+        //print("DatabaseHelper -> getUsers")
         guard let url = URL(string: "https://dummyjson.com/users") else {
             throw URLError(.badURL)
         }

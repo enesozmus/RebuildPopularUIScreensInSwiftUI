@@ -170,7 +170,7 @@ extension SpotifyHomeView {
                     singer: row.singerName
                 )
                 .asButton(.press) {
-                    //goToPlaylistView(product: product)
+                    goToPlaylistView()
                 }
             }
         }
@@ -185,7 +185,7 @@ extension SpotifyHomeView {
                     singer: row.singerName
                 )
                 .asButton(.press) {
-                    //goToPlaylistView(product: product)
+                    goToPlaylistView()
                 }
             }
         }
@@ -204,10 +204,10 @@ extension SpotifyHomeView {
                     HStack(alignment: .top, spacing: 16) {
                         /*
                          ForEach(row.products) { product in
-                            ImageTitleRowCell(
-                                imageSize: 120,
-                                imageName: product.firstImage,
-                                title: product.title
+                         ImageTitleRowCell(
+                         imageSize: 120,
+                         imageName: product.firstImage,
+                         title: product.title
                          )
                          */
                         ForEach(songRows) { song in
@@ -217,7 +217,7 @@ extension SpotifyHomeView {
                                 title: song.songName
                             )
                             .asButton(.press) {
-                                //goToPlaylistView(product: product)
+                                goToPlaylistView()
                             }
                         }
                     }
@@ -254,6 +254,18 @@ extension SpotifyHomeView {
             print("getMockData() -> \(error.localizedDescription)")
         }
     }
+    private func goToPlaylistView() {
+        router.showScreen(.sheet) { _ in
+            SpotifyPlaylistView()
+        }
+    }
+    //    private func goToPlaylistView(song: MainModel) {
+    //        guard let currentUser else { return }
+    //
+    //        router.showScreen(.push) { _ in
+    //            SpotifyPlaylistView(song: song, user: currentUser)
+    //        }
+    //    }
     private func newReleaseSection(mainModel: MainModel) -> some View {
         SpotifyNewReleaseCell(
             //imageName: mainModel.firstImage,
@@ -277,5 +289,7 @@ extension SpotifyHomeView {
 
 // MARK: Preview
 #Preview {
-    SpotifyHomeView()
+    RouterView { _ in
+        SpotifyHomeView()
+    }
 }
