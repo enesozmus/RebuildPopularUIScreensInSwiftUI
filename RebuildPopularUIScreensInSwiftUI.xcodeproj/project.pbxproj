@@ -21,6 +21,7 @@
 		DF4E294A2C14D13C00D07E95 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E29492C14D13C00D07E95 /* ShareButton.swift */; };
 		DF4E294C2C14D1AF00D07E95 /* RateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E294B2C14D1AF00D07E95 /* RateButton.swift */; };
 		DF4E29502C14D6A700D07E95 /* NetflixMovieCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E294F2C14D6A700D07E95 /* NetflixMovieCell2.swift */; };
+		DF69E42E2C21C87A00682963 /* SongRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF69E42D2C21C87A00682963 /* SongRowCell.swift */; };
 		DF6CEA592C15EE3600EAA77B /* InterestPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6CEA582C15EE3600EAA77B /* InterestPillView.swift */; };
 		DF6CEA5B2C15EF7A00EAA77B /* InterestPillGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6CEA5A2C15EF7A00EAA77B /* InterestPillGridView.swift */; };
 		DFA1B77A2C1F22DF00B0F815 /* SpotifyRecentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1B7792C1F22DF00B0F815 /* SpotifyRecentsCell.swift */; };
@@ -66,6 +67,7 @@
 		DF4E29492C14D13C00D07E95 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		DF4E294B2C14D1AF00D07E95 /* RateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateButton.swift; sourceTree = "<group>"; };
 		DF4E294F2C14D6A700D07E95 /* NetflixMovieCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixMovieCell2.swift; sourceTree = "<group>"; };
+		DF69E42D2C21C87A00682963 /* SongRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRowCell.swift; sourceTree = "<group>"; };
 		DF6CEA582C15EE3600EAA77B /* InterestPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPillView.swift; sourceTree = "<group>"; };
 		DF6CEA5A2C15EF7A00EAA77B /* InterestPillGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPillGridView.swift; sourceTree = "<group>"; };
 		DFA1B7792C1F22DF00B0F815 /* SpotifyRecentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyRecentsCell.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				DFF8E4112C20345300D56FF6 /* ImageTitleRowCell.swift */,
 				DF2A16942C216D920057F414 /* PlaylistDescriptionCell.swift */,
 				DF2A16922C216A630057F414 /* PlaylistHeaderCell.swift */,
+				DF69E42D2C21C87A00682963 /* SongRowCell.swift */,
 				DFA7D7242C1F04A300ED1D84 /* SpotifyCategoryCell.swift */,
 				DF22C9C52C1F6F5B0026FEAE /* SpotifyNewReleaseCell.swift */,
 				DFA1B7792C1F22DF00B0F815 /* SpotifyRecentsCell.swift */,
@@ -396,6 +399,7 @@
 				DFBD2BED2C14AA6600531167 /* MainModel.swift in Sources */,
 				DF4E29502C14D6A700D07E95 /* NetflixMovieCell2.swift in Sources */,
 				DFBD2BE02C14AA0300531167 /* RebuildPopularUIScreensInSwiftUIApp.swift in Sources */,
+				DF69E42E2C21C87A00682963 /* SongRowCell.swift in Sources */,
 				DF22C9C62C1F6F5B0026FEAE /* SpotifyNewReleaseCell.swift in Sources */,
 				DFBD2BF52C14AD4600531167 /* NetflixFilterBarView.swift in Sources */,
 				DFA7D7252C1F04A300ED1D84 /* SpotifyCategoryCell.swift in Sources */,

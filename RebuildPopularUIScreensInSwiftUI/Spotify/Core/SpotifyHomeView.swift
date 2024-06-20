@@ -231,6 +231,9 @@ extension SpotifyHomeView {
     
     // MARK: Functions
     private func getMockData() async {
+        
+        guard songs.isEmpty else { return }
+        
         do {
             // ... user
             currentUser = try await DatabaseHelper().getUsers().first

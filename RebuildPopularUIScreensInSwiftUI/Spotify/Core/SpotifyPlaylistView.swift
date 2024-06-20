@@ -16,7 +16,7 @@ struct SpotifyPlaylistView: View {
     var song: MainModel = MainModel.mockSpotify
     var user: UserModel = .mock
     
-    //@State private var mainModels: [MainModel] = []
+    @State private var songs: [MainModel] = []
     @State private var showHeader: Bool = true
     
     
@@ -50,9 +50,28 @@ struct SpotifyPlaylistView: View {
                         onPlayPressed: nil
                     )
                     .padding(.horizontal, 16)
+                    ForEach(songs) { song in
+                        SongRowCell(
+                            imageSize: 50,
+                            imageName: song.firstImage,
+                            title: song.title,
+                            subtitle: song.brand ?? "",
+                            onCellPressed: {
+                                goToPlaylistView(song: song)
+                            },
+                            onEllipsisPressed: {
+                            }
+                        )
+                        .padding(.leading, 16)
+                    }
                 }
             }
             .scrollIndicators(.hidden)
+            header
+                .frame(maxHeight: .infinity, alignment: . top)
+        }
+        .task {
+            await getMockData()
         }
         .toolbar(.hidden, for: .navigationBar)
     }
@@ -60,7 +79,45 @@ struct SpotifyPlaylistView: View {
 
 // MARK: Extension
 extension SpotifyPlaylistView {
+    // ... 🔵
+    private var header: some View {
+        ZStack {
+            Text(song.title)
+                .font(.headline)
+                .padding(.vertical, 20)
+                .frame(maxWidth: .infinity)
+                .background(Color.spotifyBlack)
+                .offset(y: showHeader ? 0 : -40)
+                .opacity(showHeader ? 1 : 0)
+            
+            Image(systemName: "chevron.left")
+                .font(.title3)
+                .padding(10)
+                .background(showHeader ? Color.black.opacity(0.001) : Color.spotifyGray.opacity(0.7))
+                .clipShape(Circle())
+                .onTapGesture {
+                    router.dismissScreen()
+                }
+                .padding(.leading, 16)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .foregroundStyle(.spotifyWhite)
+        .animation(.smooth(duration: 0.2), value: showHeader)
+    }
     
+    // MARK: Functions
+    private func getMockData() async {
+        do {
+            songs = try await DatabaseHelper().getProducts()
+        } catch {
+            
+        }
+    }
+    private func goToPlaylistView(song: MainModel) {
+        router.showScreen(.push) { _ in
+            SpotifyPlaylistView(song: song, user: user)
+        }
+    }
 }
 
 
