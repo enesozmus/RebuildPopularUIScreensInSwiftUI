@@ -3,14 +3,12 @@
 
 ## 🎵 Spotify
 > * Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world.
-> * 
+
 ## 🎬 Netflix
 > * Netflix is a subscription-based streaming service that allows our members to watch TV shows and movies on an internet-connected device.
 
 ## 🍷 Bumble
 > * Bumble is an online dating application developed for iOS and Android platforms.
-
-
 
 ## 📹 Screen Recordings
 | | | |
